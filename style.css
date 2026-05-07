@@ -1,0 +1,138 @@
+/* Reset & Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #0f0f0f; /* Hitam Mewah */
+    color: #ffffff;
+    font-family: 'Poppins', sans-serif;
+    overflow-x: hidden;
+}
+
+h1, h2 {
+    font-family: 'Playfair Display', serif;
+    color: #d4af37; /* Warna Emas Klasik */
+}
+
+/* Helper Class */
+.hidden {
+    display: none !important;
+}
+
+/* --- HALAMAN SAMPUL (COVER) --- */
+.cover-container {
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background: radial-gradient(circle, #1a1a1a 0%, #000000 100%);
+    position: fixed;
+    z-index: 10;
+    transition: opacity 1s ease-out;
+}
+
+.cover-content h1 {
+    font-size: 3rem;
+    margin-bottom: 10px;
+    letter-spacing: 2px;
+}
+
+.cover-content p {
+    font-style: italic;
+    color: #bfa100;
+    margin-bottom: 30px;
+}
+
+.btn-buka {
+    padding: 15px 40px;
+    font-size: 1.1rem;
+    background: transparent;
+    color: #d4af37;
+    border: 2px solid #d4af37;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.btn-buka:hover {
+    background: #d4af37;
+    color: #000;
+    box-shadow: 0 0 20px rgba(212, 175, 55, 0.6);
+}
+
+/* --- HALAMAN ALBUM --- */
+.album-container {
+    padding: 50px 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.album-header {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.album-header h2 {
+    font-size: 2.5rem;
+}
+
+/* Gallery Grid */
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+    padding: 20px;
+}
+
+/* Gaya Polaroid (Mewah tapi Lucu) */
+.polaroid {
+    background: #fff;
+    padding: 15px;
+    padding-bottom: 40px; /* Bagian bawah lebih lebar buat teks */
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+    transition: transform 0.3s ease;
+    position: relative;
+}
+
+/* Kasih efek miring-miring dikit biar "lucu" dan estetik */
+.polaroid:nth-child(even) {
+    transform: rotate(3deg);
+}
+.polaroid:nth-child(odd) {
+    transform: rotate(-3deg);
+}
+
+.polaroid:hover {
+    transform: rotate(0deg) scale(1.05);
+    z-index: 5;
+    box-shadow: 0 15px 40px rgba(212, 175, 55, 0.4);
+}
+
+.polaroid img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    display: block;
+}
+
+.polaroid .caption {
+    margin-top: 15px;
+    color: #333;
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+    font-size: 1rem;
+    text-align: center;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .cover-content h1 { font-size: 2rem; }
+    .gallery { grid-template-columns: 1fr 1fr; }
+}
