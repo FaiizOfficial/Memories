@@ -6,15 +6,15 @@
 }
 
 body {
-    background-color: #0f0f0f; /* Hitam Mewah */
+    background-color: #0f0f0f; 
     color: #ffffff;
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Courier Prime', monospace; /* Ganti ke mesin tik */
     overflow-x: hidden;
 }
 
 h1, h2 {
-    font-family: 'Playfair Display', serif;
-    color: #d4af37; /* Warna Emas Klasik */
+    font-family: 'Courier Prime', monospace; /* Ganti ke mesin tik */
+    color: #d4af37; 
 }
 
 /* Helper Class */
@@ -145,7 +145,7 @@ h1, h2 {
 .polaroid .caption {
     margin-top: 15px;
     color: #333;
-    font-family: 'Playfair Display', serif;
+    font-family: 'Courier Prime', monospace; /* Ganti ke mesin tik */
     font-style: italic;
     font-size: 1rem;
     text-align: center;
