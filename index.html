@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Album Kita</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Font elegan dari Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;1,600&family=Poppins:wght@300;400&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <!-- Halaman Sampul untuk memicu lagu -->
+    <div id="cover-page" class="cover-container">
+        <div class="cover-content">
+            <h1>Untuk Istriku Tersayang</h1>
+            <p>Ada sesuatu yang spesial buat kamu...</p>
+            <button id="open-btn" class="btn-buka">Buka Album</button>
+        </div>
+    </div>
+
+    <!-- Halaman Album (Awalnya disembunyikan dulu) -->
+    <div id="album-page" class="album-container hidden">
+        <header class="album-header">
+            <h2>Kisah Kita</h2>
+        </header>
+        
+        <!-- Nanti kita taruh foto-foto bergaya polaroid di sini -->
+        <div class="gallery">
+            <!-- Tempat foto 1, 2, 3 dst -->
+        </div>
+    </div>
+
+    <!-- File Audio. Siapkan 1 lagu mp3 di folder assets -->
+    <audio id="bg-music" loop>
+        <source src="assets/lagu-kita.mp3" type="audio/mpeg">
+    </audio>
+
+    <script src="script.js"></script>
+</body>
+</html>
