@@ -76,37 +76,53 @@ h1, h2 {
 
 .album-header {
     text-align: center;
-    margin-bottom: 50px;
+    margin-bottom: 30px;
 }
 
 .album-header h2 {
     font-size: 2.5rem;
 }
 
-/* Gallery Grid */
-.gallery {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 30px;
+.album-header .swipe-hint {
+    color: #bfa100;
+    font-style: italic;
+    font-size: 0.9rem;
+    margin-top: 5px;
+}
+
+/* --- ALBUM SLIDER (Buku) --- */
+.swiper {
+    width: 100%;
+    padding-bottom: 60px; /* Jarak buat panah navigasi */
+}
+
+.page-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 40px; /* Jarak antar 2 foto di satu lembar */
     padding: 20px;
 }
 
 /* Gaya Polaroid (Mewah tapi Lucu) */
 .polaroid {
     background: #fff;
-    padding: 15px;
+    padding: 12px;
     padding-bottom: 40px; /* Bagian bawah lebih lebar buat teks */
-    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
-    transition: transform 0.3s ease;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.6);
+    width: 100%;
+    max-width: 350px; /* Ukuran maksimal foto */
     position: relative;
+    border-radius: 4px;
+    transition: transform 0.3s ease;
 }
 
-/* Kasih efek miring-miring dikit biar "lucu" dan estetik */
+/* Efek miring dikit biar tetep ada kesan lucu */
 .polaroid:nth-child(even) {
-    transform: rotate(3deg);
+    transform: rotate(2deg);
 }
 .polaroid:nth-child(odd) {
-    transform: rotate(-3deg);
+    transform: rotate(-2deg);
 }
 
 .polaroid:hover {
@@ -115,10 +131,14 @@ h1, h2 {
     box-shadow: 0 15px 40px rgba(212, 175, 55, 0.4);
 }
 
-.polaroid img {
+/* SOLUSI BIAR FOTO & VIDEO GAK GEPENG */
+.polaroid img, 
+.polaroid video {
     width: 100%;
-    height: 250px;
-    object-fit: cover;
+    height: auto; 
+    aspect-ratio: 3 / 4; /* Bikin rasio portrait alami */
+    object-fit: cover; 
+    border-radius: 2px;
     display: block;
 }
 
@@ -129,10 +149,21 @@ h1, h2 {
     font-style: italic;
     font-size: 1rem;
     text-align: center;
+    font-weight: bold;
 }
 
-/* Responsive */
+/* Modifikasi Panah Swiper biar warnanya Emas */
+.swiper-button-next, .swiper-button-prev {
+    color: #d4af37 !important; 
+}
+
+/* --- RESPONSIVE UNTUK HP --- */
 @media (max-width: 768px) {
     .cover-content h1 { font-size: 2rem; }
-    .gallery { grid-template-columns: 1fr 1fr; }
+    
+    /* Di HP, 2 foto ditumpuk atas-bawah biar tetep gede dan jelas */
+    .page-content { 
+        flex-direction: column; 
+        gap: 20px; 
+    }
 }
